@@ -1,0 +1,16 @@
+.cat-hero{position:relative;overflow:hidden;padding:9rem 5vw 4rem}
+.cat-hero .glow{top:-20%}
+.cat-hero-in{position:relative;z-index:2;animation:in .9s both}
+.cat-hero h1{max-width:18ch}
+.cat-list{padding-top:2rem}
+.cat-list .filters{margin:0 0 1rem}
+.cat-list #filters{margin-bottom:2rem}
+.proj.sold{border-color:rgba(255,92,92,.18)}
+.proj.sold img{filter:grayscale(.85) brightness(.7)}
+.proj.sold h3{color:var(--m)}
+.status{position:absolute;top:12px;left:12px;z-index:2;padding:.2rem .75rem;border-radius:99px;font:700 .76rem var(--fb);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.status.ok{background:rgba(0,230,118,.16);color:var(--g);border:1px solid var(--g);box-shadow:0 0 14px rgba(0,230,118,.3)}
+.status.no{background:rgba(255,92,92,.16);color:#ff6b6b;border:1px solid #ff6b6b}
+.imgw{position:relative}
+.pact{display:grid;gap:.5rem;margin-top:.6rem}.pact .btn{margin:0}
+.pact .btn[aria-disabled=true]{background:transparent;color:var(--m);border-color:var(--line);pointer-events:none}

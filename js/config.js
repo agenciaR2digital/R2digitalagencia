@@ -2,8 +2,8 @@
    (o item fica oculto no site). WhatsApp: somente dígitos com DDI, ex.: "5531999999999". */
 window.R2_CONFIG = {
   company: "R2 Digital",
-  whatsapp: "5531989593136",
-  phone: "(31) 98959-3136",
+  whatsapp: "553198133841",
+  phone: "(31) 98213-3841",
   email: "r2.marketing01@gmail.com",
   address: "Rua oswaldo crivellari 161, santa rosa - Belo Horizonte MG",
   hours: "Segunda a Sábado, das 8h às 18h",

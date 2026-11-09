@@ -1,0 +1,137 @@
+# R2 Digital — Site institucional + Catálogo
+
+Site em HTML, CSS e JavaScript puro, sem build e sem dependências.
+
+## Estrutura
+
+```
+Rafael/
+├── index.html                 Página principal
+├── css/style.css              Visual de todo o site (inclusive o catálogo)
+├── js/
+│   ├── config.js              Dados de contato e mensagens do WhatsApp
+│   ├── projects.js            Portfólio da página principal
+│   └── script.js              Interações da página principal
+├── catalogo/
+│   ├── index.html             Página do catálogo  (r2digitalagencia.com.br/catalogo)
+│   ├── css/catalogo.css       Detalhes visuais do catálogo
+│   └── js/
+│       ├── models.js          LISTA DE MODELOS DO CATÁLOGO (edite aqui)
+│       └── catalogo.js        Funcionamento do catálogo
+└── assets/
+    ├── favicon/favicon.svg
+    └── images/                Coloque aqui as imagens dos sites
+```
+
+## Como abrir no VS Code
+
+1. Abra a **pasta inteira** (File > Open Folder), não um arquivo solto.
+2. Instale a extensão **Live Server**.
+3. Clique com o botão direito em `index.html` > **Open with Live Server**.
+4. Para ver o catálogo, clique em "Catálogo" no menu (ou abra `catalogo/index.html` com o Live Server).
+
+Depois de editar e salvar, a página atualiza sozinha. Se não atualizar, aperte `Ctrl + F5`.
+
+---
+
+## 1. Como alterar as informações de contato
+
+Edite **`js/config.js`**. Ele vale para a página principal e para o catálogo.
+
+```js
+whatsapp: "5531989593136",            // só números, com 55 + DDD + número
+phone: "(31) 98959-3136",             // como aparecerá escrito no site
+email: "contato@exemplo.com.br",
+address: "Rua Exemplo, 100 - Bairro - Cidade UF",
+hours: "Segunda a Sábado, das 8h às 18h",
+instagram: "@r2digital",              // @usuario ou link completo
+social: { facebook: "...", linkedin: "..." }
+```
+
+Regras importantes:
+- O WhatsApp deve ter **apenas números**, sem espaço, parênteses ou traço.
+- Um campo com `"[INSERIR ...]"` fica **oculto** no site. Para esconder um dado, deixe nesse formato.
+- Facebook e LinkedIn precisam começar com `https://`.
+- Para mudar o texto que chega no WhatsApp, edite o bloco `messages` do mesmo arquivo.
+
+---
+
+## 2. Como acrescentar um site ao catálogo
+
+Edite **`catalogo/js/models.js`**. Copie um bloco inteiro, cole abaixo do último e altere os campos:
+
+```js
+{ name: "Nome do modelo",
+  category: "Saúde",
+  description: "Texto curto sobre o site.",
+  status: "Disponível",
+  image: "../assets/images/nome-do-modelo.jpg",
+  url: "https://link-da-demonstracao.com.br" },
+```
+
+Atenção:
+- **Todo bloco termina com vírgula**, exceto o último da lista.
+- Os textos ficam entre aspas `" "`.
+- `image` e `url` são opcionais. Se deixar `""`, o card mostra uma prévia automática e o botão "Ver demonstração" some.
+- Para **excluir** um modelo, apague o bloco inteiro (da `{` até o `}` e a vírgula).
+
+### Onde guardar os arquivos de cada site-modelo
+Cada modelo é um site completo em **uma pasta própria** dentro de `catalogo/modelos/`. Exemplo já incluído: `catalogo/modelos/estetica-automotiva/` (index.html, style.css, script.js e img/preview.jpg).
+
+No `models.js`, use `url: "modelos/nome-da-pasta/"` e `image: "modelos/nome-da-pasta/img/preview.jpg"`. Dentro do modelo, use sempre caminhos relativos (`style.css`, nunca `/style.css`).
+
+### Imagem do modelo
+1. Tire um print da página inicial do site (formato horizontal, proporção 16:10, por exemplo 1280x800).
+2. Salve em `assets/images/` com nome sem espaços nem acentos (`clinica-medica.jpg`).
+3. Em `image`, escreva `"../assets/images/clinica-medica.jpg"`. O `../` é necessário no catálogo.
+4. Mantenha cada imagem abaixo de **200 KB** (use squoosh.app ou tinypng.com).
+
+---
+
+## 3. Como mudar de Disponível para Vendido
+
+Em `catalogo/js/models.js`, altere o campo `status` do modelo:
+
+```js
+status: "Disponível"   // tag verde, botão "Quero este modelo" ativo
+status: "Vendido"      // tag vermelha, imagem em cinza, botão desativado
+```
+
+Escreva exatamente `"Disponível"` ou `"Vendido"`. Qualquer valor que contenha "vendid" é tratado como vendido; qualquer outro é tratado como disponível.
+
+Se você vendeu um modelo para um cliente, pode colocar o link do site dele em `url`. Em modelos vendidos o botão de demonstração fica oculto; se quiser mostrá-lo, me peça o ajuste.
+
+---
+
+## 4. Como alterar a categoria
+
+No mesmo arquivo, altere o campo `category`:
+
+```js
+category: "Alimentação",
+```
+
+- Os botões de filtro do catálogo são **criados automaticamente** com as categorias que você usar. Para criar uma categoria nova (ex.: "Beleza"), basta escrever `category: "Beleza"`.
+- Escreva sempre do mesmo jeito. "Saúde" e "saude" viram duas categorias diferentes.
+- Há também um filtro por status (Todos, Disponíveis, Vendidos) que funciona sozinho.
+
+---
+
+## 5. Portfólio da página principal
+
+O portfólio da página principal usa **`js/projects.js`**, que funciona de forma parecida, com `type: "Demonstrativo"` ou `"Cliente"` em vez de `status`.
+
+As categorias dos filtros dessa seção são fixas: Clínicas, Saúde, Alimentação, Serviços e Outros. Uma categoria fora dessa lista aparece em "Todos", mas não ganha botão próprio. Se precisar de outra, me peça.
+
+---
+
+## 6. Publicação e boas práticas
+
+- **Publicar:** envie a pasta inteira para a hospedagem mantendo a estrutura. A pasta `catalogo/` precisa ficar dentro do site para o endereço `r2digitalagencia.com.br/catalogo` funcionar.
+- **Testar antes de publicar:** abra o site no celular e confira o WhatsApp, o menu e os filtros.
+- **Backup:** use o Git que você já tem. Faça `git add .`, `git commit -m "Novo modelo"` e `git push` a cada alteração.
+- **Imagem de compartilhamento:** crie uma imagem de 1200x630 e adicione no `<head>` do `index.html`: `<meta property="og:image" content="https://r2digitalagencia.com.br/assets/images/og.jpg">`. Assim o link do site aparece com imagem no WhatsApp e no Instagram.
+- **Google:** cadastre o site no Google Search Console e no Google Meu Negócio. Isso ajuda a ser encontrado.
+- **Antes de apagar um modelo vendido**, considere mantê-lo no catálogo como "Vendido". Mostra movimento e passa credibilidade.
+- **Cuidado com vírgulas e aspas** nos arquivos `.js`. Se algo sumir do site, aperte `F12`, abra a aba **Console** e veja a linha do erro.
+- **Não edite** o `catalogo.js` e o `script.js` para tarefas do dia a dia. Os arquivos para atualizar conteúdo são `config.js`, `projects.js` e `models.js`.
