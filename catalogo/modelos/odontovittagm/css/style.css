@@ -1,0 +1,56 @@
+:root {
+    --color-primary: #2878C7;
+    --color-light: #EAF4FC;
+    --color-dark: #174B70;
+    --color-accent: #58C9B4;
+    --color-text-main: #243447;
+    --color-text-muted: #64748B;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-text-main);
+    background-color: #FFFFFF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+@keyframes bounceSlow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes scaleUp {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.animate-bounce-slow {
+    animation: bounceSlow 4s ease-in-out infinite;
+}
+
+.animate-scale-up {
+    animation: scaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.treatment-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.treatment-card.hidden-filter {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    display: none;
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}

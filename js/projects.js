@@ -1,10 +1,19 @@
-/* PORTFÓLIO — para adicionar, copie um objeto; para excluir, apague-o; para editar, altere os campos.
-   category: "Clínicas" | "Saúde" | "Alimentação" | "Serviços" | "Outros"
-   type: "Demonstrativo" | "Cliente"
-   image: caminho em assets/images/ (opcional: sem imagem, gera-se uma prévia automática)
-   url: link do site (opcional: sem link, o botão mostra "Em breve") */
-window.R2_PROJECTS = [
-  { name: "OdontoVitta", category: "Clínicas", description: "Site institucional para clínica odontológica, com foco em credibilidade, apresentação de tratamentos e agendamentos.", type: "Demonstrativo", image: "", url: "" },
-  { name: "Gerais Farma", category: "Saúde", description: "Site comercial para farmácia, com identidade visual profissional e apresentação de serviços.", type: "Demonstrativo", image: "", url: "https://www.araujo.com.br/?srsltid=AYCX9vIJKmaGZQQfzf6y6buBkefZRGfnMwGkjEKJI3dAD-l3igiye3V5" },
-  { name: "Projeto Empresarial", category: "Outros", description: "Projeto de apresentação comercial para empresa local.", type: "Demonstrativo", image: "", url: "" }
+/* PORTFÓLIO DINÂMICO DA HOME — Espelha 100% o comportamento do Catálogo */
+window.R2_PROJECTS = (typeof window.R2_MODELS !== 'undefined' && window.R2_MODELS.length > 0) ? window.R2_MODELS.map(m => {
+    const statusText = m.status || "Disponível";
+    const isVendido = statusText.toLowerCase() === 'vendido';
+    
+    return {
+        name: m.name,
+        // Garante que a categoria use exatamente a mesma palavra cadastrada no models.js
+        category: m.category ? m.category.trim() : "Outros",
+        description: m.description,
+        type: statusText, // Status (Disponível / Vendido)
+        badgeClass: isVendido ? "vendido" : "disponivel", // Classe da tag para cor vermelha/verde
+        image: m.image ? "catalogo/" + m.image : "",
+        // Se tiver URL, exibe o link de demonstração; se não tiver, força o comportamento de Ver Demonstração
+        url: m.url ? (m.url.startsWith("http") ? m.url : "catalogo/" + m.url) : "#"
+    };
+}) : [
+    { name: "OdontoVitta", category: "Clínicas", description: "Site institucional.", type: "Disponível", badgeClass: "disponivel", image: "", url: "#" }
 ];
