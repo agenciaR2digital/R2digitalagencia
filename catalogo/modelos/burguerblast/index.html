@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Blast | Hamburgueria em Belo Horizonte</title>
+    <meta name="description" content="Conheça a Burger Blast! Hambúrgueres artesanais, combos, batatas fritas, bebidas e sobremesas. Confira nosso cardápio e faça seu pedido.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Burger Blast | Hamburgueria em Belo Horizonte">
+    <meta property="og:description" content="Explosão de sabor a cada mordida! Hambúrgueres artesanais incríveis e pedidos direto pelo WhatsApp.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍔</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet Corrigido -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Elementos Flutuantes Decorativos de Fundo -->
+    <div class="bg-decoration-layer" aria-hidden="true">
+        <span class="floating-item item-burger" style="top: 15%; left: 5%;">🍔</span>
+        <span class="floating-item item-fries" style="top: 35%; right: 4%;">🍟</span>
+        <span class="floating-item item-cheese" style="top: 60%; left: 3%;">🧀</span>
+        <span class="floating-item item-drink" style="top: 80%; right: 6%;">🥤</span>
+        <span class="floating-item item-star" style="top: 25%; right: 20%;">⭐</span>
+        <span class="floating-item item-star" style="top: 70%; left: 15%;">✨</span>
+        <span class="floating-item item-sauce" style="top: 45%; left: 8%;">🍅</span>
+    </div>
+
+    <!-- HEADER / MENU DE NAVEGAÇÃO -->
+    <header id="header" class="header">
+        <div class="container header-container">
+            <a href="#inicio" class="logo">
+                <span class="logo-icon">🍔</span>
+                <div class="logo-texts">
+                    <span class="logo-title">BURGER BLAST</span>
+                    <span class="logo-slogan-mini">Explosão de sabor!</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="#inicio" class="nav-link active">Início</a></li>
+                    <li><a href="#cardapio" class="nav-link">Cardápio</a></li>
+                    <li><a href="#combos" class="nav-link">Combos</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre Nós</a></li>
+                    <li><a href="#localizacao" class="nav-link">Localização</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button id="cartBtn" class="cart-btn" aria-label="Abrir carrinho de compras">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+                <a href="#cardapio" class="btn btn-yellow btn-header-cta">Peça agora</a>
+                <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Abrir menu de navegação">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO — PRIMEIRA IMPRESSÃO -->
+        <section id="inicio" class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="hero-tag">
+                        <span>BURGERS • COMBOS • BATATAS • BEBIDAS</span>
+                    </div>
+                    <h1 class="hero-title">
+                        AVISO: SEU PRÓXIMO HAMBÚRGUER VAI SER <span class="highlight">INSANO!</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Prepare-se para uma explosão de sabor. Hambúrgueres incríveis, ingredientes selecionados e combinações feitas para quem leva o sabor a sério.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#cardapio" class="btn btn-yellow btn-lg">Ver nosso cardápio</a>
+                        <a href="#cardapio" class="btn btn-outline-white btn-lg">Quero pedir agora!</a>
+                    </div>
+                    <div class="hero-badge-seal">
+                        <span class="seal-icon">🔥</span>
+                        <span>FEITO PARA MATAR SUA FOME!</span>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <div class="hero-glow"></div>
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" alt="Hambúrguer artesanal gigante suculento Burger Blast" class="hero-img" loading="eager">
+                    <div class="floating-badge badge-1">
+                        <span>🌟 100% Artesanal</span>
+                    </div>
+                    <div class="floating-badge badge-2">
+                        <span>🧀 Cheddar Cremoso</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE DESTAQUES / MARQUEE -->
+        <div class="marquee-section">
+            <div class="marquee-track">
+                <div class="marquee-content">
+                    <span>🍔 SABOR SEM LIMITES!</span>
+                    <span class="dot">•</span>
+                    <span>🧀 QUEIJO DERRETENDO!</span>
+                    <span class="dot">•</span>
+                    <span>🍟 BATATA CROCANTE!</span>
+                    <span class="dot">•</span>
+                    <span>🔥 COMBOS IRRESISTÍVEIS!</span>
+                    <span class="dot">•</span>
+                    <span>⚡ SEU PEDIDO, SUA FELICIDADE!</span>
+                    <span class="dot">•</span>
+                </div>
+                <div class="marquee-content" aria-hidden="true">
+                    <span>🍔 SABOR SEM LIMITES!</span>
+                    <span class="dot">•</span>
+                    <span>🧀 QUEIJO DERRETENDO!</span>
+                    <span class="dot">•</span>
+                    <span>🍟 BATATA CROCANTE!</span>
+                    <span class="dot">•</span>
+                    <span>🔥 COMBOS IRRESISTÍVEIS!</span>
+                    <span class="dot">•</span>
+                    <span>⚡ SEU PEDIDO, SUA FELICIDADE!</span>
+                    <span class="dot">•</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEÇÃO SOBRE A HAMBURGUERIA -->
+        <section id="sobre" class="about-section">
+            <div class="container about-container">
+                <div class="about-image-col">
+                    <div class="about-img-frame">
+                        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=700&q=80" alt="Preparação de hambúrgueres artesanais Burger Blast" loading="lazy">
+                        <div class="experience-badge">
+                            <span class="exp-number">100%</span>
+                            <span class="exp-text">Artesanal & Irresistível</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text-col">
+                    <span class="section-tag">QUEM SOMOS</span>
+                    <h2 class="section-title">Aqui a fome não tem vez!</h2>
+                    <p class="section-desc">
+                        A Burger Blast nasceu para transformar qualquer refeição em um momento especial. Nossa paixão é combinar ingredientes saborosos, hambúrgueres preparados com cuidado e acompanhamentos que deixam qualquer pedido ainda melhor.
+                    </p>
+                    <div class="about-features-grid">
+                        <div class="about-feature-card">
+                            <div class="feature-icon">🥩</div>
+                            <h3>Ingredientes selecionados</h3>
+                            <p>Combinações pensadas para entregar sabor em cada mordida.</p>
+                        </div>
+                        <div class="about-feature-card">
+                            <div class="feature-icon">👨‍🍳</div>
+                            <h3>Preparação cuidadosa</h3>
+                            <p>Cada pedido é preparado com atenção aos mínimos detalhes.</p>
+                        </div>
+                        <div class="about-feature-card">
+                            <div class="feature-icon">🥤</div>
+                            <h3>Combinações irresistíveis</h3>
+                            <p>Hambúrgueres, acompanhamentos e bebidas para todos os gostos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE COMBOS EM DESTAQUE -->
+        <section id="combos" class="featured-combos-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">OS QUERIDINHOS</span>
+                    <h2 class="section-title">QUEM TEM FOME DE VERDADE VAI DE COMBO!</h2>
+                    <p class="section-subtitle">Escolha o seu combo favorito e garanta a refeição completa com desconto e muita crocância.</p>
+                </div>
+                <div class="featured-combos-grid" id="featuredCombosGrid">
+                    <!-- Preenchido via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CARDÁPIO PRINCIPAL -->
+        <section id="cardapio" class="menu-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">CARDÁPIO COMPLETO</span>
+                    <h2 class="section-title">ESCOLHA SUA PRÓXIMA EXPLOSÃO DE SABOR!</h2>
+                    <p class="section-subtitle">Tem hambúrguer para todos os tamanhos de fome.</p>
+                </div>
+
+                <!-- Filtros do Cardápio -->
+                <div class="menu-filters" id="menuFilters">
+                    <button class="filter-btn active" data-filter="todos">Todos</button>
+                    <button class="filter-btn" data-filter="hamburgueres">Hambúrgueres</button>
+                    <button class="filter-btn" data-filter="combos">Combos</button>
+                    <button class="filter-btn" data-filter="acompanhamentos">Acompanhamentos</button>
+                    <button class="filter-btn" data-filter="bebidas">Bebidas</button>
+                    <button class="filter-btn" data-filter="sobremesas">Sobremesas</button>
+                </div>
+
+                <!-- Grid de Produtos -->
+                <div class="menu-grid" id="menuGrid">
+                    <!-- Renderizado dinamicamente pelo script.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE DIFERENCIAIS -->
+        <section class="differentials-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">POR QUE NÓS?</span>
+                    <h2 class="section-title">POR QUE A BURGER BLAST É DIFERENTE?</h2>
+                </div>
+                <div class="diff-grid">
+                    <div class="diff-card">
+                        <div class="diff-icon">🍔</div>
+                        <h3>Hambúrgueres caprichados</h3>
+                        <p>Combinações generosas e preparadas com atenção aos detalhes.</p>
+                    </div>
+                    <div class="diff-card">
+                        <div class="diff-icon">🍅</div>
+                        <h3>Ingredientes selecionados</h3>
+                        <p>Ingredientes escolhidos para proporcionar uma experiência saborosa.</p>
+                    </div>
+                    <div class="diff-card">
+                        <div class="diff-icon">🍟</div>
+                        <h3>Combos completos</h3>
+                        <p>Tudo o que você precisa para uma refeição especial e farta.</p>
+                    </div>
+                    <div class="diff-card">
+                        <div class="diff-icon">📱</div>
+                        <h3>Pedido simplificado</h3>
+                        <p>Escolha seus produtos e finalize seu pedido diretamente pelo WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERIA DE FOTOS -->
+        <section class="gallery-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">GALERIA</span>
+                    <h2 class="section-title">OLHA ESSA DELÍCIA!</h2>
+                    <p class="section-subtitle">Dê uma olhada de perto no que espera por você na Burger Blast.</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=700&q=80" alt="Hambúrguer artesanal suculento" loading="lazy">
+                        <div class="gallery-overlay"><span>🔍 Ver ampliada</span></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=80" alt="Porção de batatas fritas crocantes com cheddar e bacon" loading="lazy">
+                        <div class="gallery-overlay"><span>🔍 Ver ampliada</span></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1551782450-17144efb9c50?auto=format&fit=crop&w=700&q=80" alt="Cheeseburger duplo com queijo derretendo" loading="lazy">
+                        <div class="gallery-overlay"><span>🔍 Ver ampliada</span></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=700&q=80" alt="Milkshake cremoso de chocolate" loading="lazy">
+                        <div class="gallery-overlay"><span>🔍 Ver ampliada</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE LOCALIZAÇÃO E HORÁRIOS -->
+        <section id="localizacao" class="location-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">ONDE ESTAMOS</span>
+                    <h2 class="section-title">VEM MATAR A FOME COM A GENTE!</h2>
+                    <p class="section-subtitle">Visite nossa loja ou peça pelo delivery em Belo Horizonte.</p>
+                </div>
+
+                <div class="location-grid">
+                    <div class="location-info-card">
+                        <div class="loc-icon-header">📍</div>
+                        <h3>Endereço</h3>
+                        <p class="loc-address">Avenida Fleming, região da Pampulha, Belo Horizonte – MG</p>
+                        
+                        <div class="loc-hours-box">
+                            <h4>Horários de Funcionamento</h4>
+                            <ul>
+                                <li><span>Segunda-feira:</span> <strong>18h às 23h</strong></li>
+                                <li><span>Terça-feira:</span> <strong>18h às 23h</strong></li>
+                                <li><span>Quarta-feira:</span> <strong>18h às 23h</strong></li>
+                                <li><span>Quinta-feira:</span> <strong>18h às 23h</strong></li>
+                                <li><span>Sexta-feira:</span> <strong>18h às 00h</strong></li>
+                                <li><span>Sábado:</span> <strong>18h às 00h</strong></li>
+                                <li><span>Domingo:</span> <strong>18h às 23h</strong></li>
+                            </ul>
+                        </div>
+
+                        <div class="loc-buttons">
+                            <a href="https://maps.google.com/?q=Avenida+Fleming+Pampulha+Belo+Horizonte" target="_blank" rel="noopener" class="btn btn-yellow">Como chegar</a>
+                            <a href="#cardapio" class="btn btn-red">Fazer pedido</a>
+                        </div>
+                    </div>
+
+                    <div class="location-map-card">
+                        <div class="map-placeholder">
+                            <div class="map-content-box">
+                                <span class="map-pin">🍔</span>
+                                <h3>Burger Blast • Pampulha</h3>
+                                <p>Av. Fleming, Belo Horizonte - MG</p>
+                                <span class="map-hint">Atendimento presencial e delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="final-cta-section">
+            <div class="container text-center">
+                <span class="cta-emoji">🔥</span>
+                <h2 class="final-title">DEU FOME AÍ, NÉ?</h2>
+                <p class="final-desc">Não fica só na vontade. Escolha seu favorito e peça agora!</p>
+                <a href="#cardapio" class="btn btn-yellow btn-xl pulse-btn">QUERO MEU BURGER!</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <a href="#inicio" class="logo footer-logo">
+                    <span class="logo-icon">🍔</span>
+                    <div class="logo-texts">
+                        <span class="logo-title">BURGER BLAST</span>
+                        <span class="logo-slogan-mini">Explosão de sabor a cada mordida!</span>
+                    </div>
+                </a>
+                <p class="footer-about">
+                    A melhor hamburgueria artesanal de Belo Horizonte. Sabores marcantes, ingredientes frescos e muita paixão em cada preparo.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram" target="_blank" rel="noopener"> IG </a>
+                    <a href="#" aria-label="WhatsApp" target="_blank" rel="noopener"> WA </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3>Navegação</h3>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#cardapio">Cardápio</a></li>
+                    <li><a href="#combos">Combos</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#localizacao">Localização</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Categorias</h3>
+                <ul class="footer-links">
+                    <li><a href="#cardapio" onclick="filterBy('hamburgueres')">Hambúrgueres</a></li>
+                    <li><a href="#cardapio" onclick="filterBy('combos')">Combos</a></li>
+                    <li><a href="#cardapio" onclick="filterBy('acompanhamentos')">Acompanhamentos</a></li>
+                    <li><a href="#cardapio" onclick="filterBy('bebidas')">Bebidas</a></li>
+                    <li><a href="#cardapio" onclick="filterBy('sobremesas')">Sobremesas</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contato & Horários</h3>
+                <p>📍 Av. Fleming, Pampulha — Belo Horizonte, MG</p>
+                <p>🕒 Seg a Qui: 18h às 23h | Sex e Sáb: 18h às 00h | Dom: 18h às 23h</p>
+                <p class="footer-whatsapp-info">📱 Pedidos online via WhatsApp</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="currentYear">2026</span> Burger Blast. Todos os direitos reservados. R2 Digital.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CARRINHO LATERAL -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <div class="cart-title-wrap">
+                <h3>🛒 Seu Pedido</h3>
+                <span class="cart-count-label" id="cartCountLabel">0 itens</span>
+            </div>
+            <button class="cart-close-btn" id="cartCloseBtn" aria-label="Fechar carrinho">&times;</button>
+        </div>
+
+        <div class="cart-body" id="cartBody">
+            <!-- Itens renderizados via JS -->
+        </div>
+
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-total-row">
+                <span>Subtotal:</span>
+                <span id="cartSubtotal">R$ 0,00</span>
+            </div>
+            <div class="cart-total-row final-total">
+                <span>Total do Pedido:</span>
+                <span id="cartTotal">R$ 0,00</span>
+            </div>
+
+            <div class="customer-info-form">
+                <label for="customerName">Seu Nome:</label>
+                <input type="text" id="customerName" placeholder="Digite seu nome completo">
+                
+                <label for="deliveryType">Tipo de Atendimento:</label>
+                <select id="deliveryType">
+                    <option value="Delivery">Delivery (Entrega em casa)</option>
+                    <option value="Retirada no Balcão">Retirada no Balcão</option>
+                    <option value="Consumo no Local">Consumo no Local</option>
+                </select>
+
+                <label for="customerAddress" id="addressLabel">Endereço de Entrega:</label>
+                <input type="text" id="customerAddress" placeholder="Rua, número, bairro e complemento">
+            </div>
+
+            <button class="btn btn-yellow btn-whatsapp-checkout" id="whatsappCheckoutBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448c-.632.344-1.334.524-2.046.523-.687 0-1.368-.173-1.983-.503l-4.179 1.096zm17.556-9.52c-.318-.159-1.882-.928-2.173-1.034-.291-.107-.503-.159-.715.159-.214.318-.823 1.034-1.008 1.248-.184.214-.37.24-.688.081-.318-.159-1.341-.494-2.555-1.579-.944-.84-1.58-1.874-1.765-2.192-.184-.318-.02-.491.139-.65.143-.143.318-.371.477-.556.16-.184.214-.318.318-.531.107-.214.053-.401-.027-.56-.081-.159-.715-1.725-.982-2.362-.26-.62-.525-.536-.715-.546-.184-.009-.395-.009-.606-.009s-.555.08-.847.397c-.292.318-1.116 1.091-1.116 2.66 0 1.569 1.144 3.084 1.303 3.298.159.214 2.25 3.435 5.452 4.815.762.33 1.356.528 1.821.676.766.243 1.463.208 2.016.126.619-.092 1.882-.769 2.147-1.512.265-.743.265-1.379.186-1.512-.079-.133-.292-.212-.61-.371z"/></svg>
+                Finalizar pedido pelo WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightboxImg" src="" alt="Imagem ampliada da galeria">
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toastNotification">
+        <span id="toastMsg">Item adicionado ao carrinho! 🍔</span>
+    </div>
+
+    <!-- Script Corrigido -->
+    <script src="js/script.js"></script>
+</body>
+</html>
